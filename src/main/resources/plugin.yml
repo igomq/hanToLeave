@@ -1,5 +1,5 @@
 main: me.gomq.hantoleave.HanToLeave
-version: 0.0.1
+version: 0.1.0
 name: HanToLeave
 author: GomQ
 description: Plugin for Hangul Creation Day
