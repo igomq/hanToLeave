@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "5.1.0"
+}
+
+group 'io.github.igomq'
+version '0.2.2-dev1'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation 'org.bukkit:patched_1.16.5:1.16.5'
+}
+jar {
+    finalizedBy shadowJar
+
+    manifest {
+        attributes 'Main-Class': 'me.gomq.hantoleave.HanToLeave'
+    }
+    from {
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+
+processResources {
+    filesMatching("**/*.yml") {
+        expand(project.properties)
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
