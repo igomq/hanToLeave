@@ -17,11 +17,11 @@ import java.util.Random;
 public class InventoryClickListener implements Listener {
     public static final ItemStack WORD_H;
     static {
-        ItemStack temp = new ItemStack(Material.BLACK_BANNER, 1);
+        ItemStack temp = new ItemStack(Material.RED_BANNER, 1);
         ItemMeta meta = temp.getItemMeta();
 
         meta.addEnchant(Enchantment.DURABILITY, 1, true);
-        meta.setDisplayName(ChatColor.BLACK + "\'ㅎ\'");
+        meta.setDisplayName(ChatColor.RED + "[ \"ㅎ\" ]");
         temp.setItemMeta(meta);
 
         WORD_H = temp;
@@ -29,22 +29,22 @@ public class InventoryClickListener implements Listener {
 
     public static final ItemStack WORD_A;
     static {
-        ItemStack temp = new ItemStack(Material.RED_BANNER, 1);
+        ItemStack temp = new ItemStack(Material.BLUE_BANNER, 1);
         ItemMeta meta = temp.getItemMeta();
 
         meta.addEnchant(Enchantment.DURABILITY, 1, true);
-        meta.setDisplayName(ChatColor.BLACK + "\'ㅏ\'");
+        meta.setDisplayName(ChatColor.BLUE + "[ \"ㅏ\" ]");
         temp.setItemMeta(meta);
 
         WORD_A = temp;
     }
     public static final ItemStack WORD_N;
     static {
-        ItemStack temp = new ItemStack(Material.BLUE_BANNER, 1);
+        ItemStack temp = new ItemStack(Material.WHITE_BANNER, 1);
         ItemMeta meta = temp.getItemMeta();
 
         meta.addEnchant(Enchantment.DURABILITY, 1, true);
-        meta.setDisplayName(ChatColor.BLACK + "\'ㄴ\'");
+        meta.setDisplayName(ChatColor.WHITE + "[ \"ㄴ\" ]");
         temp.setItemMeta(meta);
 
         WORD_N = temp;
@@ -62,17 +62,21 @@ public class InventoryClickListener implements Listener {
             e.getWhoClicked().getInventory().removeItem(RandomItem.scrollItem);
             Inventory playerInventory = e.getWhoClicked().getInventory();
 
-            // get random number 1~10
+            // get random number 1~100
             Random random = new Random();
-            int randomNumber = random.nextInt(10) + 1;
+            int randomNumber = random.nextInt(100) + 1;
 
-            // get random item (70%, 20%, 10%)
-            if (randomNumber <= 7) {
+            if (randomNumber <= 75) {
+                e.getWhoClicked().sendMessage(ChatColor.BOLD + (ChatColor.RED + "응 실패 허접아"));
+            } else if (randomNumber <= 90) {
                 playerInventory.addItem(WORD_H);
-            } else if (randomNumber <= 9) {
+                e.getWhoClicked().sendMessage(ChatColor.GREEN + "[ \"ㅎ\" ]이 나왔네? ㅊㅊ");
+            } else if (randomNumber <= 98) {
                 playerInventory.addItem(WORD_A);
+                e.getWhoClicked().sendMessage(ChatColor.GREEN + "[ \"ㅏ\" ]가 나왔네? ㅊㅊ");
             } else {
                 playerInventory.addItem(WORD_N);
+                e.getWhoClicked().sendMessage(ChatColor.GREEN + "어라? [ \"ㄴ\" ]이 나왔네? ㅊㅊㅊ");
             }
         }
     }
