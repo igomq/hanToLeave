@@ -56,12 +56,12 @@ public class InventoryClickListener implements Listener {
     @EventHandler
     public void onInventoryClick (InventoryClickEvent e) {
         if (e.getClick().isLeftClick()) return;
-        e.setCancelled(true);
 
         ItemStack clickedItem = e.getCurrentItem();
         assert clickedItem != null;
 
         if (clickedItem.isSimilar(RandomItem.scrollItem)) {
+            e.setCancelled(true);
             e.getWhoClicked().getInventory().removeItem(RandomItem.scrollItem);
             Inventory playerInventory = e.getWhoClicked().getInventory();
 
@@ -69,12 +69,12 @@ public class InventoryClickListener implements Listener {
             Random random = new Random();
             int randomNumber = random.nextInt(100) + 1;
 
-            if (randomNumber <= 65) {
+            if (randomNumber <= 70) {
                 e.getWhoClicked().sendMessage(ChatColor.BOLD + (ChatColor.RED + "응 실패 허접아"));
             } else if (randomNumber <= 80) {
                 playerInventory.addItem(WORD_H);
                 e.getWhoClicked().sendMessage(ChatColor.GREEN + "[ \"ㅎ\" ]이 나왔네? ㅊㅊ");
-            } else if (randomNumber <= 93) {
+            } else if (randomNumber <= 95) {
                 playerInventory.addItem(WORD_A);
                 e.getWhoClicked().sendMessage(ChatColor.GREEN + "[ \"ㅏ\" ]가 나왔네? ㅊㅊ");
             } else {
@@ -82,6 +82,7 @@ public class InventoryClickListener implements Listener {
                 e.getWhoClicked().sendMessage(ChatColor.GREEN + "어라? [ \"ㄴ\" ]이 나왔네? ㅊㅊㅊ");
             }
         } else if (clickedItem.isSimilar(LeaveItem.finalItem)) {
+            e.setCancelled(true);
             Player clicked = Bukkit.getPlayer(e.getWhoClicked().getUniqueId());
 
             assert clicked != null;

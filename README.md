@@ -10,7 +10,7 @@ This plugin is for Hangul proclamation day. <br/>
 It is a plugin that makes the player leave the server when he/she claimed all required item and created the final item.
 
 ## How To Play
-### How to set-up the server
+### How to set up the server
 1. Download the plugin from [here](https://github.com/igomq/hantoleave/releases/latest)
 2. Download Java Runtime (Java 17 or later is required)
 3. Download the Minecraft Server Core (Spigot / Paper 1.18 or later is required)
@@ -26,13 +26,38 @@ It is a plugin that makes the player leave the server when he/she claimed all re
 ![image](https://user-images.githubusercontent.com/48321102/194753614-305f39bd-14f1-47e4-ad75-78329bfa3cf1.png)
 <br/> Create the Gat-Cha Item by putting the required items in the crafting table. <br/>
 The required items are as follows. <br/>
-You can use this item by right-clicking the item in your inventory (You should open the inventory!) 
+You can use this item by right-clicking the item in your inventory (You should open the inventory!)
+
+Probability of the Gat-Cha Item <br/>
+<table>
+    <th>Item</th>
+    <th>Probability</th>
+    <tr>
+        <td>Fail</td>
+        <td>70%</td>
+    </tr>
+    <tr>
+        <td>Item [ㅎ]</td>
+        <td>10%</td>
+    </tr>
+    <tr>
+        <td>Item [ㅏ]</td>
+        <td>15%</td>
+    </tr>
+    <tr>
+        <td>Item [ㄴ]</td>
+        <td>5%</td>
+    </tr>
+</table>
+<br/>
+
 #### - How to create the final item
 ![image](https://user-images.githubusercontent.com/48321102/194753716-a88e93f3-dbcd-454a-a483-1314a13d76bf.png)
 <br/> Create the final item by putting the required items in the crafting table. <br/>
 The required items are as follows. <br/>
 **Those red, blue, white banners are came from the Gat-Cha Item.** <br/>
-You can use this item by rightww-clicking the item in your inventory (You should open the inventory!)
+You can use this item by right-clicking the item in your inventory (You should open the inventory!)
+<br/><br/>
 #### - How to play after you created the final item
 ![image](https://user-images.githubusercontent.com/48321102/194753768-31f7e479-adf6-4cb5-b9c1-8a5bfc2b7edf.png)
 <br/> After you created the final item, you can use the item by right-clicking the item in your inventory (You should open the inventory!) <br/>
