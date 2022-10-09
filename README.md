@@ -34,7 +34,7 @@ Probability of the Gat-Cha Item <br/>
     <th>Probability</th>
     <tr>
         <td>Fail</td>
-        <td>70%</td>
+        <td>80%</td>
     </tr>
     <tr>
         <td>Item [ㅎ]</td>
@@ -42,11 +42,11 @@ Probability of the Gat-Cha Item <br/>
     </tr>
     <tr>
         <td>Item [ㅏ]</td>
-        <td>15%</td>
+        <td>7%</td>
     </tr>
     <tr>
         <td>Item [ㄴ]</td>
-        <td>5%</td>
+        <td>3%</td>
     </tr>
 </table>
 <br/>

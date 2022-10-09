@@ -69,12 +69,12 @@ public class InventoryClickListener implements Listener {
             Random random = new Random();
             int randomNumber = random.nextInt(100) + 1;
 
-            if (randomNumber <= 70) {
+            if (randomNumber <= 80) {
                 e.getWhoClicked().sendMessage(ChatColor.BOLD + (ChatColor.RED + "응 실패 허접아"));
-            } else if (randomNumber <= 80) {
+            } else if (randomNumber <= 90) {
                 playerInventory.addItem(WORD_H);
                 e.getWhoClicked().sendMessage(ChatColor.GREEN + "[ \"ㅎ\" ]이 나왔네? ㅊㅊ");
-            } else if (randomNumber <= 95) {
+            } else if (randomNumber <= 97) {
                 playerInventory.addItem(WORD_A);
                 e.getWhoClicked().sendMessage(ChatColor.GREEN + "[ \"ㅏ\" ]가 나왔네? ㅊㅊ");
             } else {
