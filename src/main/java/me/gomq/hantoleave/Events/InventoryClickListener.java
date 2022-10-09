@@ -1,10 +1,13 @@
 package me.gomq.hantoleave.Events;
 
 import me.gomq.hantoleave.Recipe.RandomItem;
+import me.gomq.hantoleave.Recipe.LeaveItem;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -66,18 +69,24 @@ public class InventoryClickListener implements Listener {
             Random random = new Random();
             int randomNumber = random.nextInt(100) + 1;
 
-            if (randomNumber <= 75) {
+            if (randomNumber <= 65) {
                 e.getWhoClicked().sendMessage(ChatColor.BOLD + (ChatColor.RED + "응 실패 허접아"));
-            } else if (randomNumber <= 90) {
+            } else if (randomNumber <= 80) {
                 playerInventory.addItem(WORD_H);
                 e.getWhoClicked().sendMessage(ChatColor.GREEN + "[ \"ㅎ\" ]이 나왔네? ㅊㅊ");
-            } else if (randomNumber <= 98) {
+            } else if (randomNumber <= 93) {
                 playerInventory.addItem(WORD_A);
                 e.getWhoClicked().sendMessage(ChatColor.GREEN + "[ \"ㅏ\" ]가 나왔네? ㅊㅊ");
             } else {
                 playerInventory.addItem(WORD_N);
                 e.getWhoClicked().sendMessage(ChatColor.GREEN + "어라? [ \"ㄴ\" ]이 나왔네? ㅊㅊㅊ");
             }
+        } else if (clickedItem.isSimilar(LeaveItem.finalItem)) {
+            Player clicked = Bukkit.getPlayer(e.getWhoClicked().getUniqueId());
+
+            assert clicked != null;
+            clicked.setGameMode(org.bukkit.GameMode.SPECTATOR);
+            clicked.kickPlayer(ChatColor.DARK_RED + "게임 끝!\n재접속하세요. 관전자 모드로 진입됩니다.");
         }
     }
 }

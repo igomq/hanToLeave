@@ -7,6 +7,7 @@ public class RecipeManager {
     public static ArrayList<ShapedRecipe> getRecipes() {
         ArrayList<ShapedRecipe> recipes = new ArrayList<>();
         recipes.add(RandomItem.getRecipe());
+        recipes.add(LeaveItem.getRecipe());
 
         return recipes;
     }
